@@ -1,0 +1,24 @@
+# OPlus configuration options
+
+config MACH_OPLUS
+	bool "OPlus device"
+	depends on ARCH_QCOM
+	help
+	  Support for OPlus products
+
+config MACH_OPLUS_SDM845
+	bool "OPlus SDM845"
+	depends on ARCH_QCOM
+	select MACH_OPLUS
+	help
+	  Support for OPlus SDM845 devices
+
+menu "OPlus board selection"
+
+config MACH_OPLUS_FINDX
+  bool "OPPO Find X board"
+  select MACH_OPLUS_SDM845
+  help
+    Support for OPPO Find X (17107, 17127)
+
+endmenu
